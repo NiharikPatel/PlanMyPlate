@@ -1,0 +1,435 @@
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
+   
+}
+:root{
+    font-size: 16px;
+}
+body{
+    /* background-image:linear-gradient(to right,white,rgba(68, 86, 35, 0.8)); */
+    background-image:url('../image/formbackgrounding.jpg');
+    background-repeat: no-repeat;
+     background-position: center center;
+     background-size: cover;
+}
+div.aside{
+    background-image: url('..image/bg3.jpg');
+    background-size: cover  ;
+    background-repeat: no-repeat;
+    align-items: center;
+    float: left;
+    position: relative;
+   width: 39%;
+    height: 50vw;
+
+}
+.nav1{
+    margin: 0%;
+    background-image:linear-gradient(to right, rgb(7, 11, 0,0.8),rgb(158, 194, 92, 0.8));
+    
+    font-size: 1em;
+    font-weight: 200;
+
+}
+
+ul.nav1 li{
+    
+    margin-top: .3em;
+    margin-left: .6em;
+      margin-right: .6em;
+       display: inline;
+       padding-left:.6em;
+       padding-right: .6em;
+   
+      
+   }
+   
+   
+   .nav1 a{
+       text-decoration:none ;
+       color: rgb(255, 255, 255);
+       margin-top: 0px;
+       line-height: .1em;
+       
+   }
+
+   div .regfrm {
+ 
+    position: absolute;
+    bottom: 5%;
+    left: 28%;
+    box-sizing: content-box;
+    border: black 1px;
+    background-image: linear-gradient(to top,rgb(158, 194, 92, 0.7), rgb(215, 217, 211,0.7)) ;
+    text-align: center;
+    border-radius: 4px;
+    border: 2px rgb(20, 20, 20);
+    padding: .3em;
+   
+}
+
+.regfrm i{
+    position: absolute;
+    padding-left: 5px;
+   text-align: center;
+   padding-top: 3px;
+
+}
+.icon{
+    
+    padding: .5em;
+    color: green;
+    text-align: center;
+    min-width:3em;
+}
+
+
+#login{
+    font-size: 1em;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+h5{
+    text-align: center;
+   
+}
+.opt button{
+    position: relative;
+    padding-bottom: 2px;
+   
+}
+.opt .icon{
+    position: absolute;
+    left: 2px;
+    bottom: 2px;
+    margin-left: 0px;
+}
+.opt span{
+ margin-left: 25px;
+}
+a:hover{
+    color: azure;
+}
+
+
+div.main
+
+{   background-color: rgba(248, 252, 135, 0.3);
+    align-items: center;
+    justify-content: center;
+    float: right;
+    width: 59%;
+    height: 100%;
+    flex:right;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1.7em;
+    
+   }
+h1{
+    margin: 0%;
+    font-family:Brush Script MT, Brush Script Std, cursive;
+    font-style: italic;
+    text-align: center;
+    font-size: 3em;
+    color: rgba(255, 136, 0, 0.879);
+    text-shadow: 5px 5px rgb(0, 0, 0);
+ 
+}
+#intro{
+    font-size: 1.1em;
+    margin-left: .6em;
+    margin-right: .6em;
+    margin-top:1em;
+}
+#form1{
+    display: flex;
+    flex-direction: row;
+    
+}
+#form1 label{
+   margin-bottom: .8em;
+    text-decoration: solid;
+    font-size: 1em;
+    color: rgb(14, 15, 15);
+    padding: 3px;
+    display: inline-block;
+    width: 10.5em;
+   word-wrap: break-word;
+   
+}
+#form1 input{
+    margin-bottom: .8em;
+    width: 8em;
+    word-wrap: break-word;
+    box-shadow: inset;
+   
+}
+#form1 select{
+    
+    width: 8em;
+    overflow: hidden;
+    white-space: pre;
+    text-overflow: ellipsis;
+
+}
+
+#forms{
+
+    margin-left: .6em;
+    margin-right: .6em;
+    margin-top:1em;
+    padding: 1em;
+    border-bottom: 0px transparent;
+    height: fit-content;
+    opacity: 1;
+    box-shadow: 2px -2px 2px 2px gray;
+    /* text-decoration-color: aliceblue; */
+}
+.formGrid{
+    margin-right: 2em;
+}
+.formGrid button{
+    float: right;
+}
+button:hover{
+    cursor: pointer;
+    color: rgb(110, 165, 50);   
+}
+button:active{
+   background-color:rgb(223, 186, 52);
+}
+#mealPlan{
+
+    display: flex;
+    flex-direction: row;
+    
+}
+#mealPlan div{
+    border-radius: 3px;
+    background-color: rgba(248, 252, 135, 0.3);
+    box-shadow: rgb(110, 165, 50) 1px 1px 0px 1px;
+    margin: .5em;
+    border:1px black solid;
+    padding: .5em;
+    text-align: center;
+}
+#mealPlan div img{
+    border:1px black solid;
+    border-radius: 1px;
+}
+
+.modal {
+    display: none; /* Hide the modal by default */
+    position: fixed; /* Position the modal */
+    z-index: 1; /* Set the modal to be on top of other elements */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scrolling if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+  }
+  
+  .modal-content {
+    background-color: #fefefe; /* Modal background color */
+    margin: 5% auto; /* 15% from the top and centered horizontally */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; /* Set the width of the modal */
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  #symbox {
+    display: inline-block;
+    border: 1px solid black;
+    padding: 0.1em;
+    border-radius: 4px;
+  }
+  
+  .green-symbol {
+    color: green;
+    font-size: .9em;
+  }
+  
+  .brown-symbol {
+    color: brown;
+    font-size: .9em;
+  }
+
+  #historyContent table{
+    border-collapse: collapse;
+    }
+    #historyContent th {
+        background-color: #4f813e;
+        color: white;
+        padding: 8px;
+        text-align: left;
+        font-weight: bold;
+      }
+      
+      /* Style for table cells */
+      #historyContent  td {
+        padding: 8px;
+        border-bottom: 1px solid #050505;
+      }
+      #historyContent  tr {
+        padding: 8px;
+        border-bottom: 1px solid #050505;
+      }
+      
+      /* Style for alternating rows */
+      #historyContent tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      .closetable{
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      
+      .closetable:hover,
+      .closetable:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+   div .register {
+    position: absolute;
+    top: 0;
+    left: 17%;
+    box-sizing: content-box;
+    border: black 1px;
+    background-image: linear-gradient(to top,rgb(158, 194, 92, 0.7), rgb(215, 217, 211,0.7)) ;
+    text-align: center;
+    border-radius: 4px;
+    border: 2px rgb(20, 20, 20);
+    padding: .3em;
+   
+}
+.register  label{
+    text-align: left;
+    margin-bottom: .8em;
+     text-decoration: solid;
+     font-size: 1em;
+     color: rgb(14, 15, 15);
+     padding: 3px;
+     display: inline-block;
+     width: 10.5em;
+    word-wrap: break-word;
+    
+ }
+ .register  input{
+     margin-bottom: .8em;
+     width: 8em;
+     word-wrap: break-word;
+     box-shadow: inset;
+    
+ }
+ #message-container {
+ 
+   
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Adjust as needed */
+    z-index: 999; /* Make sure it's on top of other content */
+}
+
+/* Custom CSS for success messages */
+.alert-success {
+   padding: 1em;
+    text-align: center;
+    background-color: #dff0d8; /* Green background color */
+    border-color: #d0e9c6; /* Green border color */
+    color: #3c763d; /* Green text color */
+    z-index: 1; 
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Custom CSS for error and danger messages */
+.alert-danger {
+    padding: 1em;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f2dede; /* Red background color */
+    border-color: #ebccd1; /* Red border color */
+    color: #a94442; /* Red text color */
+    z-index: 1; 
+}
+
+
+.alert strong {
+    font-weight: bold; /* Make the text bold within all alerts */
+}
+
+/* Custom padding and margin for all alerts */
+.close-alert {
+    
+    color:white;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: red;
+    /* padding: 10px 15px; 
+    margin-bottom: 20px;  */
+    border: 1px solid rgb(232, 228, 228); /* Add a border */
+    border-radius: 1px; /* Add rounded corners */
+}
+
+.main h1 img{
+    height: 3em;
+    width: auto;
+}
+
+
+#userprofile{
+    padding-bottom: 1em;
+    background-image: linear-gradient(to top,rgb(158, 194, 92, 0.7), rgb(215, 217, 211,0.7)) ; 
+}
+.fgtpass-container{
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center; /* Vertically center */
+    align-items: center; /* Horizontally center */
+    height: 100vh;
+}
+.fgtpass-container form {
+    margin-bottom: 10px;
+       text-align: center; /* Center the form elements horizontally */
+       box-sizing: content-box;
+       background-color: #d0e9c6;
+    padding: 2em;
+    width: fit-content;
+}
+.fgtpass-container form label{
+    margin-bottom: 10px;
+}
+.fgtpass-container form input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

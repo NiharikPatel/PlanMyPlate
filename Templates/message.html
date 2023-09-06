@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/healthwebstyle.css' %}">
+</head>
+<body>
+{% if messages %}
+{% for message in messages %}
+<div class="alert
+{% if message.tags == 'success' %}
+  alert-success
+{% elif message.tags == 'error' %}
+  alert-danger
+{% endif %}
+">
+    <button type="button" class="close-alert"> 
+      ×
+    </button>
+    
+<strong>{{message}}</strong>
+</div>
+{% endfor %}
+ {% endif %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var closeButtons = document.querySelectorAll(".close-alert");
+
+    closeButtons.forEach(function (closeButton) {
+        closeButton.addEventListener("click", function () {
+            var messageContainer = closeButton.parentElement;
+            messageContainer.style.display = "none";
+        });
+    });
+});
+</script>
+</body>
+</html>

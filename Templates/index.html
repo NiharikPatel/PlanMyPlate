@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+        <link rel="icon" href="{% static 'image/favicon.ico' %}" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@900&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Plan My Plate</title>
+        <script src="https://kit.fontawesome.com/8cd36af7b2.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{% static 'css/healthwebstyle.css' %}">
+        <!-- <link rel="stylesheet" href="https://kit.fontawesome.com/8cd36af7b2.css" crossorigin="anonymous"> -->
+        <script>
+            const apiKey = '{{ api_key }}';
+        </script>
+    </head>
+    <body>
+        <header id="message-container">
+            {% include 'message.html' %}
+            </header>
+        <div class="aside">
+           
+            <div class="register">
+                {% block content %}
+                  
+                {% endblock %}
+                </div>
+               
+                <div class="regfrm" > 
+                    <p>Already registered?</p>
+                    <form method="POST" action="{% url 'login_view' %}" id="login-form">
+
+                        <h5>Login Here</h5>
+                        {% csrf_token %} 
+                        <input type="text" class="input-field" placeholder="Username" id="mail" name="username"><br>
+                        <input type="password" class="input-field" placeholder="Password" id="loginpass" name="password"><br>
+                        <button id="login" type="submit">LOGIN</button><br>  
+                        </form>
+                        <a href="{% url 'forget_password' %}">Forget Password</a>
+                     <p>Not registered?<a href="{% url 'register' %}">Sign Up</a></p> 
+                
+                </div>
+            </div>
+        <div class="main">
+            <h1 style="font-family: 'Merienda', cursive;">Plan My Plate  <i class="fa-solid fa-rectangle-list"></i> </h1>
+            <p id="intro">Is it confusing to decide what to eat today or what to cook today for balance and healty diet? Plan My Plate will help you in this decision.<br> By providing your details to the webpage you will end with list of meals with their recipe and nutrients content. Suggested meal is according to body. You can also save your meals to review your diet by signing up<i class="fa-regular fa-face-smile-wink"></i></p>
+        
+                    <div id="forms">
+        
+                    <form id="form1">
+                    <div class="formGrid"> 
+                    <label for="age">Age (in yrs)</label><input id="age" type="number" required><br>
+                    <label for="height">Height (in cms)</label><input id="height" type="number" required><br>
+                    <label for="weight">Weight(in Kgs)</label><input id="weight" type="number" required><br>
+                    <label>Body-Fat% (calulated)</label><input id="fat" type="number" readonly style="background-color: rgb(118, 212, 161)"><br>
+                    
+                    </div> 
+                    <div class="formGrid"> 
+                    <label for="gender">Gender</label><select id="gender">Gender<option>Female</option><option>Male</option></select><br>
+                    <label>Activity level</label><select id="activity" required>
+                        <option value="sedentary">Sedentary (little or no exercise)</option>
+                        <option value="lightlyActive">Lightly Active (light exercise/sports 1-3 days/week)</option>
+                        <option value="moderatelyActive">Moderately Active (moderate exercise/sports 3-5 days/week)</option>
+                        <option value="veryActive">Very Active (hard exercise/sports 6-7 days a week)</option>
+                        <option value="extraActive">Extra Active (very hard exercise/sports & physical job or 2x training)</option>
+                        </select><br>
+                        <label for="mealType">Meal Type</label>
+                        <select id="mealType">
+                        <option>breakfast</option>
+                        <option>lunch</option>
+                        <option>dinner</option>
+                        <option>All Three</option>
+                        </select><br>  
+                        <label>Calories/Day (calculated)</label><input id="cal" type="number" readonly style="background-color: rgb(118, 212, 161)"><br>
+                        <button type="submit" id="menu">Show Menu <i class="fa-solid fa-utensils"></i></button>&nbsp;<button id="home-save" type="button">Save</button>
+                     </div>
+                    </form>
+                       
+             
+                <div id="mealPlan"></div> 
+                  <div id="recipeContainer"></div>
+                  <div id="recipeModal" class="modal">
+                    <div class="modal-content">
+                      <span class="close">&times;</span>
+                      <div id="recipeContent">
+                    
+                    </div>
+                      </div>
+                    </div>
+            
+
+        <script type="text/javascript" src="{% static 'js/myScript.js' %} "></script>
+    </body>
+</html>
