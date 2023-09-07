@@ -93,7 +93,6 @@ def register_view(request):
 def authenticate(username=None, password=None):
     try:
         user = User.objects.get(username = username)
-        print(user)
         if check_password(password, user.password):
             return user
     
@@ -109,8 +108,6 @@ def login_view(request):
         password = request.POST['password'] 
         user = authenticate(username=username, password=password)
         api_key = os.environ.get('API_KEY')
-        print(api_key)
-        
         
         if user is not None:
             if not user.is_email_verified:
@@ -142,9 +139,7 @@ class MealViewSet(viewsets.ModelViewSet):
 
 @login_required
 def usermealplanner_view(request):
-    api_key = os.environ.get('API_KEY')
-    print(api_key,"usermealplanner")
-        
+    api_key = os.environ.get('API_KEY')        
     return render(request, 'mealplanneruser.html',{'api_key':api_key})
 
 #class for saving the meal plan in meal model
@@ -209,17 +204,18 @@ def change_password(request, ptoken):
             confirm_password = request.POST.get('newpassword2')
             user_id = request.POST.get('user_id')
             if user_id is None:
-                messages.success(request, 'No user_id found')
+                messages.error(request, 'No user_id found')
                 return redirect(f'/change-password/{ptoken}')
             
             if new_password != confirm_password:
-                messages.success(request, 'both password not matched')
+                messages.error(request, 'Both password not matched')
                 return redirect(f'/change-password/{ptoken}')  
                          
        
             user_obj = User.objects.get(id = user_id)
             user_obj.set_password(new_password)
             user_obj.save()
+            messages.success(request, 'Your password changed successfully.')
             return redirect('/logout/')
 
 
